@@ -4,14 +4,16 @@ FROM registry.gitlab.com/adam.stanek/nanit:$NANIT_BASE_VERSION AS nanit-base
 
 FROM debian:buster
 RUN apt-get -yqq update \
-    && apt-get install -yq --no-install-recommends ca-certificates ffmpeg jq wget curl
+    && apt-get install -yq --no-install-recommends ca-certificates ffmpeg jq wget
+
+RUN wget https://github.com/moparisthebest/static-curl/releases/download/v7.83.1/curl-armv7 -O /usr/bin/curl
+RUN chmod a+x /usr/bin/curl
 
 RUN mkdir -p /usr/src/bashio \
-    && wget "https://github.com/hassio-addons/bashio/archive/v0.14.3.tar.gz" -O wget.tar.gz
-
-RUN tar -xzf wget.tar.gz --strip 1 -C /usr/src/bashio \
-    && mv /usr/src/bashio/lib /usr/lib/bashio \
-    && ln -s /usr/lib/bashio/bashio /usr/bin/bashio 
+     && curl -L -f -s "https://github.com/hassio-addons/bashio/archive/v0.14.3.tar.gz" \
+         | tar -xzf - --strip 1 -C /usr/src/bashio \
+     && mv /usr/src/bashio/lib /usr/lib/bashio \
+     && ln -s /usr/lib/bashio/bashio /usr/bin/bashio 
 
 RUN mkdir -p /app/data
 COPY nanit.sh /app/bin/nanit.sh

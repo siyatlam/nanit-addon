@@ -1,6 +1,6 @@
 name: "Nanit Add-on"
 description: "Nanit addon based on adam.stanek/nanit"
-version: "0.7.9"
+version: "0.7.10"
 slug: "nanit-addon"
 init: false 
 arch:
