@@ -21,4 +21,4 @@ schema:
   mqttbroker: str
   mqttuser: str
   mqttpassword: password
-image: "siyat/nanit-addon"
+image: "siyat/nanit-addon-armv7"
