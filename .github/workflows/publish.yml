@@ -20,6 +20,6 @@ jobs:
         uses: home-assistant/builder@master
         with:
           args: |
-            --amd64 \
+            --armv7 \
             --target nanit-addon \
-            --image "nanit-addon-amd64"
+            --image "nanit-addon-armv7"

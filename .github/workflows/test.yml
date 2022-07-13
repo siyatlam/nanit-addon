@@ -14,6 +14,6 @@ jobs:
         with:
           args: |
             --test \
-            --amd64 \
+            --armv7 \
             --target nanit-addon \
-            --image "nanit-addon-amd64"
+            --image "nanit-addon-armv7"
