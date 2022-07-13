@@ -14,6 +14,6 @@ jobs:
         with:
           args: |
             --test \
-            --all \
+            --armv7 \
             --target nanit-addon \
-            --docker-hub siyat
+            --image "nanit-addon"

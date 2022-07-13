@@ -1,14 +1,10 @@
-name: "Nanit"
+name: "Nanit Add-on"
 description: "Nanit addon based on adam.stanek/nanit"
 version: "0.7.7"
-slug: "nanit"
+slug: "nanit-addon"
 init: false 
 arch:
-  - aarch64
-  - amd64
-  - armhf
   - armv7
-  - i386
 ports:
   1935/tcp: 1935
 options:
@@ -25,4 +21,4 @@ schema:
   mqttbroker: str
   mqttuser: str
   mqttpassword: password
-image: "github.com/siyatlam/{arch}-nanit-addon"
+image: "siyat/nanit-addon"
