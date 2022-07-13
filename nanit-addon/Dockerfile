@@ -4,7 +4,7 @@ FROM registry.gitlab.com/adam.stanek/nanit:$NANIT_BASE_VERSION AS nanit-base
 
 FROM debian:buster
 RUN apt-get -yqq update \
-    && apt-get install -yq --no-install-recommends ca-certificates ffmpeg jq wget
+    && apt-get install -yq --no-install-recommends ca-certificates ffmpeg jq wget curl
 
 RUN mkdir -p /usr/src/bashio \
     && wget "https://github.com/hassio-addons/bashio/archive/v0.14.3.tar.gz" -O wget.tar.gz
